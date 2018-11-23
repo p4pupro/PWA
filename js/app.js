@@ -1,8 +1,16 @@
 
 // Instanciando el Service Worker
 
+var url = window.location.href;
+
+var swLocation = '/PWA/';
+
 if ( navigator.serviceWorker ) {
-    navigator.serviceWorker.register('/sw.js');
+
+    if ( url.includes('localhost') ) {
+        swLocation = '/sw.js';
+    }
+    navigator.serviceWorker.register(swLocation);
 }
 
 
