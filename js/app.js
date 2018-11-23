@@ -3,7 +3,7 @@
 
 var url = window.location.href;
 
-var swLocation = '/PWA/';
+var swLocation = '/PWA/sw.js';
 
 if ( navigator.serviceWorker ) {
 
