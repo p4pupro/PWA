@@ -1,14 +1,24 @@
 
 
-// Guardar en el cache dinámico
-function actualizaCacheDinamico( dynamicCache, req, resp) {
+// Guardar  en el cache dinamico
+function actualizaCacheDinamico( dynamicCache, req, res ) {
 
-    if ( resp.ok ) { 
+
+    if ( res.ok ) {
+
         return caches.open( dynamicCache ).then( cache => {
-            cache.put( req, resp.clone() );
-            return resp.clone();
+
+            cache.put( req, res.clone() );
+            
+            return res.clone();
+
         });
+
     } else {
-        return resp;
+        return res;
     }
+
+
+
 }
+
